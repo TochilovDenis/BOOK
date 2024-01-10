@@ -11,6 +11,15 @@ enum typeOfBinding {
 
 string typeOfBindingStr[bindingsTotal] = { "Leather", "Paper", "Cardboard" };
 
+string BooksNames[10] = { "Собор Парижской Богоматери", "Дневник Анны Франк",
+						 "Грозовой перевал", "Сто лет одиночества", "Великий Гэтсби",
+						 "Приключения Шерлока Холмса", "Мастер и Маргарита",
+						 "Атлант расправил плечи", "Три товарища", "Робинзон Крузо" };
+
+string BooksAuthors[10] = { "Виктор Гюго", "Анна Франк", "Эмили Бронте", "Габриэль Гарсия Маркес",
+						   "Фрэнсис Скотт Фицджеральд", "Артур Конан Дойл", "Михаил Булгаков",
+						   "Айн Рэнд", "Эрих Мария Ремарк", "Даниель Дефо" };
+
 struct Book
 {
 	string title = "";
@@ -31,15 +40,7 @@ struct Book
 int main() {
 	setlocale(LC_ALL, "");
 
-	Book book1, book2{ "C++", 1000, 2005, Leather };
-
-	book1.title = "The Great Book";
-	book1.amountOfPages = 500;
-	book1.yearOfPublication = 2019;
-	book1.binding = Leather;
-
-	cout << book1.getBookStatus() << endl;
-	cout << book2.getBookStatus() << endl;
+	
 
 	return 0;
 }
