@@ -9,7 +9,7 @@ enum typeOfBinding {
 	
 	bindingsTotal };
 
-string typeOfBindingStr[bindingsTotal] = { "Leather", "Paper", "Cardboard" };
+string typeOfBindingStr[bindingsTotal] = { "Кожа", "Бумага", "Картон" };
 
 string BooksTitles[10] = { "Собор Парижской Богоматери", "Дневник Анны Франк",
 						 "Грозовой перевал", "Сто лет одиночества", "Великий Гэтсби",
@@ -29,22 +29,16 @@ struct Book
 	typeOfBinding binding{};
 
 	string getBookStatus()  {
-		return "Название: " + title +
-			"\nАвтор: " + author +
-			"\nКоличество страниц: " + to_string(amountOfPages) +
-			"\nГод издания: " + to_string(yearOfPublication) +
-			"\nПереплёт: " + typeOfBindingStr[binding] + "\n";
+		return  title +	" / " + author + " : " +  to_string(yearOfPublication) + " год, " +to_string(amountOfPages) + " с. | Переплет: " + typeOfBindingStr[binding];
 	}
 };
 
 int main() {
 	setlocale(LC_ALL, "");
-
 	srand(time(0));
 
 	int numBooks = 10;
 	Book* books = new Book[numBooks];
-
 	for (int i = 0; i < numBooks; i++) {
 		books[i].title = BooksTitles[i];
 		books[i].author = BooksAuthors[i];
@@ -53,8 +47,8 @@ int main() {
 		books[i].binding = static_cast<typeOfBinding>(rand() % bindingsTotal);
 	}
 
-	for (size_t i = 0; i < numBooks; i++) {
-		cout << books[i].getBookStatus() << endl;
+	for (int i = 0; i < numBooks; i++) {
+		cout << "[" << i + 1 << "] " << books[i].getBookStatus() << endl;
 	}
 
 	delete[] books;
