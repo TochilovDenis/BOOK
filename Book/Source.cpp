@@ -1,14 +1,29 @@
-#include <iostream>
+п»ї#include <iostream>
+#include <string>
 using namespace std;
 
-enum typeOfBinding { Leather, Paper, Cardboard };
+enum typeOfBinding { 
+	Leather, 
+	Paper, 
+	Cardboard, 
+	
+	bindingsTotal };
+
+string typeOfBindingStr[bindingsTotal] = { "Leather", "Paper", "Cardboard" };
 
 struct Book
 {
-	string title;
-	int amountOfPages;
-	int yearOfPublication;
-	typeOfBinding  Binding;
+	string title = "";
+	int amountOfPages = 0;
+	int yearOfPublication = 0;
+	typeOfBinding binding{};
+
+	string getBookStatus()  {
+		return "РќР°Р·РІР°РЅРёРµ: " + title +
+			"\nРљРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚СЂР°РЅРёС†: " + to_string(amountOfPages) +
+			"\nР“РѕРґ РёР·РґР°РЅРёСЏ: " + to_string(yearOfPublication) +
+			"\nРџРµСЂРµРїР»С‘С‚: " + typeOfBindingStr[binding] + "\n";
+	}
 };
 
 int main() {
@@ -19,18 +34,10 @@ int main() {
 	book1.title = "The Great Book";
 	book1.amountOfPages = 500;
 	book1.yearOfPublication = 2019;
-	book1.Binding = Leather;
+	book1.binding = Leather;
 
-	cout << "Название: " << book1.title << "\n";
-	cout << "Количество страниц: " << book1.amountOfPages << "\n";
-	cout << "Год издания: " << book1.yearOfPublication << "\n";
-	cout << "Переплёт: " << (book1.Binding == Leather ? "Кожа" : book1.Binding == Paper ? "Бумага" : "Картон") << "\n";
-	cout << endl;
+	cout << book1.getBookStatus() << endl;
+	cout << book2.getBookStatus() << endl;
 
-	cout << "Название: " << book2.title << "\n";
-	cout << "Количество страниц: " << book2.amountOfPages << "\n";
-	cout << "Год издания: " << book2.yearOfPublication << "\n";
-	cout << "Переплёт: " << (book2.Binding == Leather ? "Кожа" : book2.Binding == Paper ? "Бумага" : "Картон") << "\n";
-	
 	return 0;
 }
