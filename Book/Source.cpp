@@ -53,6 +53,10 @@ int main() {
 		books[i].binding = static_cast<typeOfBinding>(rand() % bindingsTotal);
 	}
 
+	for (size_t i = 0; i < numBooks; i++) {
+		cout << books[i].getBookStatus() << endl;
+	}
+
 	delete[] books;
 
 	return 0;
