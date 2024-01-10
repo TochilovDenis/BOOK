@@ -14,12 +14,14 @@ string typeOfBindingStr[bindingsTotal] = { "Leather", "Paper", "Cardboard" };
 struct Book
 {
 	string title = "";
+	string author = "";
 	int amountOfPages = 0;
 	int yearOfPublication = 0;
 	typeOfBinding binding{};
 
 	string getBookStatus()  {
 		return "Название: " + title +
+			"\nАвтор: " + author +
 			"\nКоличество страниц: " + to_string(amountOfPages) +
 			"\nГод издания: " + to_string(yearOfPublication) +
 			"\nПереплёт: " + typeOfBindingStr[binding] + "\n";
