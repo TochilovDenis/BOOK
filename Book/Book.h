@@ -34,7 +34,7 @@ struct Book
 };
 
 void fillArrayBooks(Book* books, int numBooks) {
-	srand(static_cast<unsigned>(time(0))); srand(static_cast<unsigned>(time(0)));
+	srand(static_cast<unsigned>(time(0)));
 	for (size_t i = 0; i < numBooks; i++) {
 		books[i].title = BooksTitles[i];
 		books[i].author = BooksAuthors[i];
