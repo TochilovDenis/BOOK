@@ -1,4 +1,4 @@
-#ifndef FINDBOOK_H
+ï»¿#ifndef FINDBOOK_H
 #define FINDBOOK_H
 
 #include "Book.h"
@@ -35,18 +35,18 @@ Book findBookWithLongestTitle(Book books[], int size) {
 
 void printOldestBook(Book* books, int size) {
 	Book oldestBook = findOldestBook(books, size);
-	cout << "Ñàìàÿ ñòàðàÿ êíèãà: \"" << oldestBook.title
-		<< "\", îïóáëèêîâàí â " << oldestBook.yearOfPublication << " ãîäó." << endl;
+	cout << "Ð¡Ð°Ð¼Ð°Ñ ÑÑ‚Ð°Ñ€Ð°Ñ ÐºÐ½Ð¸Ð³Ð°: \"" << oldestBook.title
+		<< "\", Ð¾Ð¿ÑƒÐ±Ð»Ð¸ÐºÐ¾Ð²Ð°Ð½ Ð² " << oldestBook.yearOfPublication << " Ð³Ð¾Ð´Ñƒ." << endl;
 }
 
 void printLargestBook(Book* books, int size) {
 	Book largestBook = findLargestBook(books, size);
-	cout << "Ñàìàÿ áîëüøàÿ ñòðàíèöà: " << largestBook.amountOfPages << " èç êíèã \"" << largestBook.title << "\"" << endl;
+	cout << "Ð¡Ð°Ð¼Ð°Ñ Ð±Ð¾Ð»ÑŒÑˆÐ°Ñ ÑÑ‚Ñ€Ð°Ð½Ð¸Ñ†Ð°: " << largestBook.amountOfPages << " Ð¸Ð· ÐºÐ½Ð¸Ð³ \"" << largestBook.title << "\"" << endl;
 }
 
 void printBookWithLongestTitle(Book* books, int size) {
 	Book bookWithLongestTitle = findBookWithLongestTitle(books, size);
-	cout << "Ñàìîå äëèííîå íàçâàíèå êíèãè: \"" << bookWithLongestTitle.title << "\"" << endl;
+	cout << "Ð¡Ð°Ð¼Ð¾Ðµ Ð´Ð»Ð¸Ð½Ð½Ð¾Ðµ Ð½Ð°Ð·Ð²Ð°Ð½Ð¸Ðµ ÐºÐ½Ð¸Ð³Ð¸: \"" << bookWithLongestTitle.title << "\"" << endl;
 }
 
 #endif /*FINDBOOK_H*/
