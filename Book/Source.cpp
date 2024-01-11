@@ -29,29 +29,38 @@ struct Book
 	typeOfBinding binding{};
 
 	string getBookStatus()  {
-		return  title +	" / " + author + " : " +  to_string(yearOfPublication) + " год, " +to_string(amountOfPages) + " с. | Переплет: " + typeOfBindingStr[binding];
+		return  title +	" / " + author + " : " +  to_string(yearOfPublication) + " год, " +to_string(amountOfPages) + "с. | Переплет: " + typeOfBindingStr[binding];
 	}
 };
+
+void fillArrayBooks(Book*, int); 
+void printArrayBooks(Book* , int);
 
 int main() {
 	setlocale(LC_ALL, "");
 	srand(time(0));
-
-	int numBooks = 10;
+	const unsigned int numBooks = 10;
 	Book* books = new Book[numBooks];
-	for (int i = 0; i < numBooks; i++) {
-		books[i].title = BooksTitles[i];
-		books[i].author = BooksAuthors[i];
-		books[i].amountOfPages = rand() % 1000 + 1;
-		books[i].yearOfPublication = rand() % 120 + 1900;
-		books[i].binding = static_cast<typeOfBinding>(rand() % bindingsTotal);
-	}
-
-	for (int i = 0; i < numBooks; i++) {
-		cout << "[" << i + 1 << "] " << books[i].getBookStatus() << endl;
-	}
-
+	fillArrayBooks(books, numBooks);
+	printArrayBooks(books, numBooks);
 	delete[] books;
 
 	return 0;
+}
+
+void fillArrayBooks(Book* books, int numBooks) {
+	for (size_t i = 0; i < numBooks; i++ ) {
+		books[i].title = BooksTitles[i];
+		books[i].author = BooksAuthors[i];
+		books[i].amountOfPages = rand() % 1000 + 1;
+		books[i].yearOfPublication = rand() % 223 + 1800;
+		books[i].binding = typeOfBinding(rand() % bindingsTotal);
+	}
+}
+
+void printArrayBooks(Book* books, int numBooks) {
+	for (size_t i = 0; i < numBooks; i++)
+	{
+		cout << "[" << i + 1 << "]" << books[i].getBookStatus() << endl;
+	}
 }
