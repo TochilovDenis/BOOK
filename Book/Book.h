@@ -1,4 +1,4 @@
-#ifndef BOOK_H
+п»ї#ifndef BOOK_H
 #define BOOK_H
 
 #include <cstdlib>
@@ -18,7 +18,7 @@ enum typeOfBinding {
 	bindingsTotal
 };
 
-string typeOfBindingStr[bindingsTotal] = { "Кожа", "Бумага", "Картон" };
+string typeOfBindingStr[bindingsTotal] = { "РљРѕР¶Р°", "Р‘СѓРјР°РіР°", "РљР°СЂС‚РѕРЅ" };
 
 struct Book
 {
@@ -29,7 +29,7 @@ struct Book
 	typeOfBinding binding{};
 
 	string getBookStatus() {
-		return  title + " / " + author + " : " + to_string(yearOfPublication) + " год, " + to_string(amountOfPages) + "с. | Переплет: " + typeOfBindingStr[binding];
+		return  title + " / " + author + " : " + to_string(yearOfPublication) + " РіРѕРґ, " + to_string(amountOfPages) + "СЃ. | РџРµСЂРµРїР»РµС‚: " + typeOfBindingStr[binding];
 	}
 };
 
